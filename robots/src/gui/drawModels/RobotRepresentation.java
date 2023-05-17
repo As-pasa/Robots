@@ -10,6 +10,17 @@ import java.awt.geom.AffineTransform;
 
 public class RobotRepresentation{
 
+
+
+    private Color m_primaryColor;
+    private Color m_edgeColor;
+    private Color m_secondaryColor;
+
+    public RobotRepresentation() {
+        m_primaryColor=Color.MAGENTA;
+        m_edgeColor=Color.BLACK;
+        m_secondaryColor=Color.WHITE;
+    }
     public void setPrimaryColor(Color m_bodyColor) {
         this.m_primaryColor = m_bodyColor;
     }
@@ -28,16 +39,6 @@ public class RobotRepresentation{
 
     public Color getM_secondaryColor() {
         return m_secondaryColor;
-    }
-
-    private Color m_primaryColor;
-    private Color m_edgeColor;
-    private Color m_secondaryColor;
-
-    public RobotRepresentation() {
-        m_primaryColor=Color.MAGENTA;
-        m_edgeColor=Color.BLACK;
-        m_secondaryColor=Color.WHITE;
     }
 
     public RobotRepresentation(Color m_bodyColor, Color m_edgeColor, Color m_eyeColor) {
