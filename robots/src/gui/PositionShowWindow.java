@@ -2,6 +2,7 @@ package gui;
 
 
 import models.RobotModel;
+import models.RobotStateProvider;
 import models.states.RobotStateReader;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class PositionShowWindow extends JInternalFrame implements Observer {
-    private RobotModel m_model;
+    private RobotStateProvider m_model;
     private JLabel m_labelX;
     private JLabel m_labelY;
     public PositionShowWindow(RobotModel model){
@@ -19,7 +20,7 @@ public class PositionShowWindow extends JInternalFrame implements Observer {
         RobotStateReader state= m_model.getState();
         m_labelX=new JLabel("X : %f".formatted(state.getX()));
         m_labelY=new JLabel("T : %f".formatted(state.getY()));
-        m_model.addObserver(this);
+        model.addObserver(this);
         JPanel panel = new JPanel(new BorderLayout());
         panel.add(m_labelX, BorderLayout.CENTER);
         panel.add(m_labelY, BorderLayout.AFTER_LAST_LINE);

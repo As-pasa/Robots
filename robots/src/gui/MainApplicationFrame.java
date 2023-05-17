@@ -15,6 +15,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import controllers.TargetPositionController;
+import gui.drawModels.RobotRepresentation;
 import log.Logger;
 import models.RobotModel;
 import models.TargetModel;
@@ -29,7 +30,7 @@ public class MainApplicationFrame extends JFrame
 {
     private final JDesktopPane desktopPane = new JDesktopPane();
     
-    public MainApplicationFrame(RobotModel model, TargetPositionController controller, TargetModel target) {
+    public MainApplicationFrame(RobotModel model, TargetPositionController controller, TargetModel target,RobotRepresentation robotView) {
         //Make the big window be indented 50 pixels from each edge
         //of the screen.
         int inset = 50;        
@@ -45,13 +46,17 @@ public class MainApplicationFrame extends JFrame
         addWindow(logWindow);
 
 
-        GameWindow gameWindow = new GameWindow(model,controller,target);
+        GameWindow gameWindow = new GameWindow(model,controller,target,robotView);
         gameWindow.setSize(400,  400);
 
         PositionShowWindow coordWindow=new PositionShowWindow(model);
         coordWindow.setSize(200,100);
         addWindow(coordWindow);
         addWindow(gameWindow);
+
+        RobotWardrobeWindow colorWindow=new RobotWardrobeWindow(robotView);
+        colorWindow.setSize(400,400);
+        addWindow(colorWindow);
 
         setJMenuBar(generateMenuBar());
         setDefaultCloseOperation(EXIT_ON_CLOSE);

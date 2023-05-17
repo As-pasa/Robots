@@ -8,7 +8,7 @@ import models.states.TargetStateReader;
 import static utils.MathUtils.*;
 import java.util.Observable;
 
-public class RobotModel extends Observable {
+public class RobotModel extends Observable implements RobotStateProvider{
 
 
     private volatile double m_PositionX = 100;

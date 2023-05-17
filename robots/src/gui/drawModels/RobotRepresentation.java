@@ -1,5 +1,6 @@
 package gui.drawModels;
 import models.RobotModel;
+import models.RobotStateProvider;
 import models.states.RobotStateReader;
 
 import static utils.DrawUtils.*;
@@ -21,6 +22,14 @@ public class RobotRepresentation{
         this.m_secondaryColor = m_eyeColor;
     }
 
+    public Color getM_primaryColor() {
+        return m_primaryColor;
+    }
+
+    public Color getM_secondaryColor() {
+        return m_secondaryColor;
+    }
+
     private Color m_primaryColor;
     private Color m_edgeColor;
     private Color m_secondaryColor;
@@ -38,7 +47,7 @@ public class RobotRepresentation{
     }
 
 
-    public void draw(Graphics2D g, RobotModel model) {
+    public void draw(Graphics2D g, RobotStateProvider model) {
         RobotStateReader state=model.getState();
         int robotCenterX = round(state.getX());
         int robotCenterY = round(state.getY());

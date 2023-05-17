@@ -28,11 +28,11 @@ public class GameVisualizer extends JPanel implements Observer {
 
 
 
-    public GameVisualizer(TargetPositionController modelController, RobotModel model, TargetModel target) {
+    public GameVisualizer(TargetPositionController modelController, RobotModel model, TargetModel target, RobotRepresentation robotView) {
 
         m_robot =model;
         m_target=target;
-        m_robotView = new RobotRepresentation(Color.RED,Color.BLACK,Color.YELLOW);
+        m_robotView = robotView;
         m_targetView = new TargetRepresentation();
         m_targetController = modelController;
 
