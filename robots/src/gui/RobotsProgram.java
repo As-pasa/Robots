@@ -28,7 +28,7 @@ public class RobotsProgram
         RobotUpdateController updateController = new RobotUpdateController(model);
 
         TargetPositionController movementController=new TargetPositionController(target);
-        RobotRepresentation robotView=new RobotRepresentation(Color.RED,Color.BLACK,Color.YELLOW);
+        RobotRepresentation robotView=new RobotRepresentation(Color.RED,Color.YELLOW);
         MainApplicationFrame frame = new MainApplicationFrame(model, movementController, target,robotView);
         frame.pack();
         frame.setVisible(true);
