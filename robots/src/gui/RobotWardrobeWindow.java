@@ -27,12 +27,9 @@ public class RobotWardrobeWindow extends JInternalFrame {
         var terms = m_modelView.getTerms();
         int counter = 0;
         for (var term : terms) {
-            var colorChooser = new JColorChooser(term.getColor());
-            colorChooser.setPreviewPanel(new JPanel());
-            colorChooser.getSelectionModel().addChangeListener(e -> term.setColor(colorChooser.getColor()));
-
-            m_ColorChoosersTab.add(colorChooser);
-            m_ColorChoosersTab.setTitleAt(counter++, term.getName());
+           m_ColorChoosersTab.add(new TermSetupGui(term));
+           m_ColorChoosersTab.setTitleAt(counter,term.getName());
+           counter++;
         }
 
 

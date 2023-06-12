@@ -15,11 +15,11 @@ public class TargetRepresentation {
     private RepresentationTermOval m_body;
 
     public TargetRepresentation() {
-        m_body = new RepresentationTermOval("body", 5, 5, Color.GREEN);
+        m_body = new RepresentationTermOval("body", 5, 5, Color.GREEN, 0, 0);
     }
 
     public TargetRepresentation(Color m_bodyColor) {
-        m_body = new RepresentationTermOval("body", 5, 5, m_bodyColor);
+        m_body = new RepresentationTermOval("body", 5, 5, m_bodyColor, 0, 0);
     }
 
 
